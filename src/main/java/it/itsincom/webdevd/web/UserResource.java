@@ -5,6 +5,8 @@ import it.itsincom.webdevd.web.model.CreateUserRequest;
 import it.itsincom.webdevd.web.model.UserResponse;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
+import jakarta.annotation.security.RolesAllowed;
+
 
 import java.util.List;
 
@@ -17,7 +19,9 @@ public class UserResource {
         this.userService = userService;
     }
 
+
     @POST
+    @RolesAllowed("ADMIN")
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
     public UserResponse register(CreateUserRequest request) {

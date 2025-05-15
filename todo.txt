@@ -1,0 +1,14 @@
+step0
+aggiungere 3 colonne a un utente:
+nome
+cognome
+indirizzo
+
+step1
+solo admin può creare utenti
+
+step2
+solo l'admin può modificare gli utenti esistenti
+
+step3
+ogni utente può anche modificare se stesso
