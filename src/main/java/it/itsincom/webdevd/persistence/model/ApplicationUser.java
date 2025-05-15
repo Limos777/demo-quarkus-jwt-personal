@@ -29,15 +29,26 @@ public class ApplicationUser {
     @Roles
     private String role;
 
+    @Column(name = "Nome", length = 255)
+    private String nome;
+
+    @Column(name = "Cognome", length = 255)
+    private String cognome;
+
+    @Column(name = "Indirizzo", length = 255)
+    private String indirizzo;
+
     public ApplicationUser() {
     }
 
-    public ApplicationUser(String username, String password, UserRole role) {
+    public ApplicationUser(String username, String password, UserRole role, String nome, String cognome, String indirizzo) {
         this.username = username;
-        this.password = BcryptUtil.bcryptHash(password);
+        this.password = password;
         this.role = role.name();
+        this.nome = nome;
+        this.cognome = cognome;
+        this.indirizzo = indirizzo;
     }
-
 
     public Long getId() {
         return id;
@@ -70,4 +81,29 @@ public class ApplicationUser {
     public void setRole(String role) {
         this.role = role;
     }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public String getCognome() {
+        return cognome;
+    }
+
+    public void setCognome(String cognome) {
+        this.cognome = cognome;
+    }
+
+    public String getIndirizzo() {
+        return indirizzo;
+    }
+
+    public void setIndirizzo(String indirizzo) {
+        this.indirizzo = indirizzo;
+    }
+
 }
